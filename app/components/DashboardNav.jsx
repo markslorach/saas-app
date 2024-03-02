@@ -3,12 +3,8 @@ import { cn } from "@/lib/utils";
 import { CreditCard, Home, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { navItems } from "./UserNav";
 
-export const navItems = [
-  { name: "Home", href: "/dashboard", icon: Home },
-  { name: "Settings", href: "/settings", icon: Settings },
-  { name: "Billing", href: "/billing", icon: CreditCard },
-];
 
 const DashboardNav = () => {
   const pathname = usePathname();
