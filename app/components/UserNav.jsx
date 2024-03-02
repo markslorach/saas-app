@@ -9,9 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-    LogoutLink,
-  } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { CreditCard, DoorClosed, Home, Settings } from "lucide-react";
 import Link from "next/link";
 
@@ -21,8 +19,7 @@ export const navItems = [
   { name: "Billing", href: "/billing", icon: CreditCard },
 ];
 
-const UserNav = ({name, email, picture}) => {
-
+const UserNav = ({ name, email, picture }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -59,10 +56,16 @@ const UserNav = ({name, email, picture}) => {
           ))}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild className="w-full flex justify-between items-center">
-            <LogoutLink>
-                Logout<span><DoorClosed className="w-4 h-4"/></span>
-            </LogoutLink>
+        <DropdownMenuItem
+          asChild
+          className="w-full flex justify-between items-center"
+        >
+          <LogoutLink>
+            Logout
+            <span>
+              <DoorClosed className="w-4 h-4" />
+            </span>
+          </LogoutLink>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
