@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center max-w-sm mx-auto mt-10">
             <RegisterLink>
-              <Button size="lg" className="w-full">
+              <Button size="lg" className="w-64">
                 Sign Up For Free
               </Button>
             </RegisterLink>

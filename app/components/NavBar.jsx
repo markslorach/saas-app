@@ -12,10 +12,12 @@ export const NavBar = async () => {
   const { isAuthenticated } = getKindeServerSession();
 
   return (
-    <nav className="border-b bg-background h-[10vh] flex items-center">
+    <nav className="border-b bg-background h-20 flex items-center">
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
-          <h1 className="font-bold text-3xl">MarkSaas.</h1>
+          <h1 className="font-bold text-3xl">
+            Mark<span className="text-primary">Saas</span>.
+          </h1>
         </Link>
         <div className="flex items-center gap-x-5">
           <ThemeToggle />
