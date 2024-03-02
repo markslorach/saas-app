@@ -1,17 +1,14 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
-// Singleton pattern for Prisma Client
-function prismaClientSingleton() {
-  return new PrismaClient();
+let prisma;
+
+if (process.env.NODE_ENV === "production") {
+  prisma = new PrismaClient();
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient();
+  }
+  prisma = global.prisma;
 }
 
-// Initialize and attach to global object (if not already defined)
-globalThis.prisma = globalThis.prisma || prismaClientSingleton();
-
-// Export for usage in other modules
-export default globalThis.prisma;
-
-// Conditional assignment for development environments
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.prisma = globalThis.prisma; 
-}
+export default prisma;
